@@ -1,14 +1,71 @@
 <html>
+    <head>
+        <style>
+            h1{color:white;text-align:center}
+            h2{color:white;}
+            h3{color:white;text-align:center}
+            body{border-radius: 10px;
+                background-color: #f2f2f2;
+                padding: 5px;}
+            .container {
+                margin:auto;
+                border-radius: 50px;
+                background-color: #192841;
+                padding: 200px;
+                width:50%;
+                
+              }
+            input[type=text], select, textarea,option{
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                resize: vertical;
+              }
+              input[type=number] {
+                width: 20%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                resize: vertical;
+                padding: 8px 8px 8px 8px;
+                display: inline-block;
+                
+              }
+              
+              /* Style the label to display next to the inputs */
+              label {
+                padding: 12px 12px 12px 0;
+                display: inline-block;
+                color:white;
+              }
+              
+              /* Style the submit button */
+              input[type=submit] {
+                background-color: #04AA6D;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float: right;
+              }
+              
+        </style>
+    </head>
 <body>
+    <div class="container">
     <div class="login">
-       <h1>Student Exam Performance Indicator</h1>
+       <h1>STUDENT EXAM PERFORMANCE INDICATOR</h1>
    
        <form action="{{ url_for('predict_datapoint')}}" method="post">
-        <h1>
-            <legend>Student Exam Performance Prediction</legend>
-        </h1>
+        <h3>
+            <legend>STUDENT MATH EXAM PERFORMANCE PREDICTION</legend>
+        </h3>
         <div class="mb-3">
-            <label class="form-label">Gender</label>
+            <label class="form-label">GENDER</label>
             <select class="form-control" name="gender" placeholder="Enter you Gender" required>
                 <option class="placeholder" selected disabled value="">Select your Gender</option>
                 <option value="male">
@@ -20,7 +77,7 @@
             </select>
         </div>
         <div class="mb-3">
-            <label class="form-label">Race or Ethnicity</label>
+            <label class="form-label">RACE OR ETHINICITY</label>
             <select class="form-control" name="ethnicity" placeholder="Enter you ethnicity" required>
                 <option class="placeholder" selected disabled value="">Select Ethnicity</option>
                 <option value="group A">
@@ -41,7 +98,7 @@
             </select>
         </div>
         <div class="mb-3">
-            <label class="form-label">Parental Level of Education</label>
+            <label class="form-label">PARENTAL LEVEL OF EDUCATION</label>
             <select class="form-control" name="parental_level_of_education"
                 placeholder="Enter you Parent Education" required>
                 <option class="placeholder" selected disabled value="">Select Parent Education</option>
@@ -66,7 +123,7 @@
             </select>
         </div>
         <div class="mb-3">
-            <label class="form-label">Lunch Type</label>
+            <label class="form-label">LUNCH TYPE</label>
             <select class="form-control" name="lunch" placeholder="Enter you Lunch" required>
                 <option class="placeholder" selected disabled value="">Select Lunch Type</option>
                 <option value="free/reduced">
@@ -78,7 +135,7 @@
             </select>
         </div>
         <div class="mb-3">
-            <label class="form-label">Test preparation Course</label>
+            <label class="form-label">TEST PREPARATION COURSE</label>
             <select class="form-control" name="test_preparation_course" placeholder="Enter you Course"
                 required>
                 <option class="placeholder" selected disabled value="">Select Test_course</option>
@@ -91,21 +148,22 @@
             </select>
         </div>
         <div class="mb-3">
-            <label class="form-label">Writing Score out of 100</label>
+            <label class="form-label"> WRITING SCORE OUT OF 100</label>
             <input class="form-control" type="number" name="reading_score"
                 placeholder="Enter your Reading score" min='0' max='100' />
         </div>
         <div class="mb-3">
-            <label class="form-label">Reading Score out of 100</label>
+            <label class="form-label">READING SCORE OUT OF 100</label>
             <input class="form-control" type="number" name="writing_score"
                 placeholder="Enter your Reading Score" min='0' max='100' />
         </div>
         <div class="mb-3">
-            <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required />
+            <input class="btn btn-primary" type="submit" value="PREDICT MATH SCORE" required />
         </div>
     </form>
     <h2>
-       THE  prediction is {{results}}
+       MATH SCORE PREDICTION : {{results}}
     </h2>
+    </div
    <body>
 </html>

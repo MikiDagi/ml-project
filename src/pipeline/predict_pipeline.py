@@ -4,8 +4,6 @@ import pandas as pd
 import numpy as np         
 from src.exception import CustomException 
 from src.logger import logging 
-from sklearn.preprocessing import StandardScaler,OneHotEncoder
-from sklearn.impute import SimpleImputer
 from src.utils import  load_object
 
 class PredictPipeline:
@@ -29,8 +27,8 @@ class CustomData:
               parental_level_of_education:str,
               lunch:str,
               test_preparation_course:str,
-              reading_score:int,
-              writing_score:int  
+              reading_score:float,
+              writing_score:float  
                  ):
         self.gender=gender,
         self.race_ethnicity=race_ethnicity,
@@ -43,13 +41,13 @@ class CustomData:
     def get_data_as_data_frame(self):
         try:
             data_frame_dict={
-                "gender": [self.gender],
-                "race_ethnicity": [self.race_ethnicity],
-                "parental_level_of_education":[self.parental_level_of_education],
-                "lunch":[self.lunch],
-                "test_preparation_course":[self.test_preparation_course],
-                "reading_score":[self.reading_score],
-                "writing_score":[self.writing_score]
+                "gender": [self.gender][0],
+                "race_ethnicity": [self.race_ethnicity][0],
+                "parental_level_of_education":[self.parental_level_of_education][0],
+                "lunch":[self.lunch][0],
+                "test_preparation_course":[self.test_preparation_course][0],
+                "reading_score":[self.reading_score][0],
+                "writing_score":[self.writing_score][0]
                 
             }
             return pd.DataFrame(data_frame_dict)
